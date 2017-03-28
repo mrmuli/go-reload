@@ -1,0 +1,17 @@
+version: '2.1'
+services:
+  postgres:
+    image: postgres:alpine
+    ports:
+    - "6543:5432"
+    environment:
+      POSTGRES_DB: demo
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+    - ./initdb:/docker-entrypoint-initdb.d/ # this mounts the database creation script
+    - pg-data:/var/lib/postgresql/data/ # defines location for database files
+
+volumes:
+  pg-data:
