@@ -1,0 +1,14 @@
+version: '2.1'
+services:
+  go-reload:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+    - "4000:4000"
+    environment:
+      # here we specify the database URL we want to use
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/demo?sslmode=disable     
+    volumes:
+    - .:/go/src/github.com/andela-jmuli/go-reload #this mounts our app's data into the workspace. Remember to use your username 
+    command: bash -c "glide install && fresh -c runner.conf main.go" # this runs our application
