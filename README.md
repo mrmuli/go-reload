@@ -11,6 +11,7 @@ To set up the application, ensure you have the following:
 1. Ensure you have Go installed and GOPATH set
 2. Docker and docker compose, get that [here](https://docs.docker.com/compose/install/) 
 3. Ensure you have Glide installed, get it [here](https://github.com/Masterminds/glide)
+4. Ensure you have fresh installed, get it [here](https://github.com/pilu/fresh)
 
 **NOTE** ensure your docker-compose is of version 1.6.0+ and Docker Engine is of version 1.12.0+
 ## Cloning the repository
@@ -24,7 +25,7 @@ RUN
 this will install dependencies
 
 RUN  
-`` go run main.go ``  
+`` fresh -c runner.conf main.go ``  
 this will run the server
 
 ## Docker Compose setup
