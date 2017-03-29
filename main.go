@@ -14,7 +14,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	router := mux.NewRouter()
+	router := mux.NewRouter() // mux helps in defining our app's route
 	router.HandleFunc("/", index)
 	log.Fatal(http.ListenAndServe(":4000", router))
 }
