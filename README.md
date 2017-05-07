@@ -1,3 +1,4 @@
+![Alt text](extras/compose.png?raw=true "Optional Title")
 # go-reload
 This is a tutorial that covers the following:  
 1. How to write a simple Go server with routing.
